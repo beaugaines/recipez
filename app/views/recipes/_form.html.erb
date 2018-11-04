@@ -1,0 +1,18 @@
+<%= bootstrap_form_for [current_user, @recipe] do |f| %>
+  <%= f.text_field :name %>
+  <%= f.select :cuisine, %w(French Chinese Mexican Italian Swedish Indian Japanese Thai) %>
+  <%= f.select :category, %w(Appetizer Breakfast Lunch Dinner) %>
+  <%= f.select :time, (15..90).step(15).to_a %>
+  <%= f.select :serving_size, (1..8).to_a %>
+
+  <h3>Ingredients</h3>
+  <div id="ingredients">
+    <%= f.fields_for :recipe_ingredients do |ff| %>
+      <%= render 'recipe_ingredient_fields', f: ff %>
+    <div class="links">
+      <%= link_to_add_association 'Add ingredient', f, :recipe_ingredients %>
+    </div>
+    <% end %>
+  </div>
+  <%= f.submit %>
+<% end %>

@@ -13,9 +13,14 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap'
+gem 'jquery-rails'
+gem "bootstrap_form", ">= 4.0.0.alpha1"
 gem 'acts_as_list'
 gem 'devise'
 gem 'pundit'
+gem 'faker'
+gem 'mini_racer' # fix weird node issue with Ubuntu
+gem 'cocoon'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
